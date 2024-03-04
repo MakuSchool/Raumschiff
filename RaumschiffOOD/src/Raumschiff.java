@@ -1,5 +1,16 @@
+/**
+ * @author Max
+ * 
+ * @version 1.0
+ * 
+ * @since 14.02.2024
+ */
+
 import java.util.ArrayList;
 
+/**
+ * Raumschiffklasse
+ */
 public class Raumschiff {
 	
 	private int photonentorpedoAnzahl;
@@ -13,7 +24,17 @@ public class Raumschiff {
 	private ArrayList<Ladung> ladungsverzeichnis = new ArrayList<Ladung>();
 	
 	
-	
+	/**
+	 * Vollparametisierter Konstruktor
+	 * 
+	 * @param photonentorpedoAnzahl Anzahl Photonentorpedos
+	 * @param energieversorgungInProzent Energieversorgung
+	 * @param schildInProzent	Schild
+	 * @param huelleInProzent	Hülle
+	 * @param lebenserhaltungssystemeInProzent	Lebenserhaltungssysteme
+	 * @param androidenAnzahl	Anzahl der Androids
+	 * @param schiffsname	Name des Schiffs
+	 */
 	public Raumschiff(int photonentorpedoAnzahl, int energieversorgungInProzent, int schildInProzent,
 			int huelleInProzent, int lebenserhaltungssystemeInProzent, int androidenAnzahl, String schiffsname) {
 		super();
@@ -102,10 +123,18 @@ public class Raumschiff {
 		this.ladungsverzeichnis = ladungsverzeichnis;
 	}
 	
+	/**
+	 * Lade neue Ladung
+	 * @param neueLadung = die zuladene Ladung
+	 */
 	public void addLadung(Ladung neueLadung) {
 		this.ladungsverzeichnis.add(neueLadung);
 	}
 	
+	/**
+	 * Schiesse Photonentorpedos auf ein anderes Raumschiff
+	 * @param r = das zu treffende Raumschiff
+	 */
 	public void photonentorpedoSchiessen(Raumschiff r) {
 		int anzahl_torpedos = this.getPhotonentorpedoAnzahl();
 		if(anzahl_torpedos == 0) {
@@ -118,6 +147,10 @@ public class Raumschiff {
 		}
 	}
 	
+	/**
+	 * Schiesse mit der Phaserkanone auf ein anderes Schiff
+	 * @param r = das zu treffende Raumschiff
+	 */
 	public void phaserkanoneSchiessen(Raumschiff r) {
 		int energie = this.getEnergieversorgungInProzent();
 		if(energie < 50) {
@@ -130,6 +163,10 @@ public class Raumschiff {
 		}
 	}
 	
+	/**
+	 * Berechne neue Prozente des Raumschiffs nach Treffer
+	 * @param r = das getroffene Raumschiff
+	 */
 	private void treffer(Raumschiff r) {
 		System.out.println(r.getSchiffsname() + " wurde getroffen!");
 		int schild = r.getSchildInProzent();
@@ -151,14 +188,25 @@ public class Raumschiff {
 		}
 	}
 	
+	/**
+	 * Sende Nachricht durch den Broadcastkomminikator
+	 * @param message = die zusendene Nachricht
+	 */
 	public void nachrichtAnAlle(String message) {
 		Raumschiff.getBroadcastKommunikator().add(message);
 	}
 	
+	/**
+	 * Gebe alle Eintraege aus dem Logbuch wieder
+	 */
 	public static void eintraegeLogbuchZurueckgeben(){
 		System.out.println("Kommunikator: " + getBroadcastKommunikator());
 	}
 	
+	/**
+	 * Lade neue Torpedos, wenn welche im Lager
+	 * @param anzahlTorpedos = die Anzahl der zulandenen Torpedos
+	 */
 	public void photonentorpedosLaden(int anzahlTorpedos) {
 		ArrayList<Ladung> verzeichnis = this.getLadungsverzeichnis();
 		int anzahlTorpedosRest = anzahlTorpedos; 
@@ -183,6 +231,13 @@ public class Raumschiff {
 		}
 	}
 	
+	/**
+	 * Repariere, Schutzschild, Energieversorgung und Schiffhuelle nach einer zufälligen Reperaturzahl
+	 * @param schutzschilde = soll Schutzschild repariert werden
+	 * @param energieversorgung = soll die Energieversorgung repariert werden
+	 * @param schiffshuelle = soll die Schiffhuelle repariert werden
+	 * @param anzahlDroids = wie viele Androids möchteste du einsetzen 
+	 */
 	public void reparaturDurchfuehren(boolean schutzschilde, boolean energieversorgung, boolean schiffshuelle, int anzahlDroids) {
 		if(this.getAndroidenAnzahl() < anzahlDroids) {
 			anzahlDroids = this.getAndroidenAnzahl();
@@ -216,6 +271,9 @@ public class Raumschiff {
 		}
 	}
 	
+	/**
+	 * Gibt den Zustand des Raumschiffs aus
+	 */
 	public void zustandRaumschiff() {
 		System.out.println("-------------Zustand-------------\n"
 						 + "Photonentorpedo(s): " + this.getPhotonentorpedoAnzahl() + "\n"
@@ -227,6 +285,9 @@ public class Raumschiff {
 						 + "Schiffsname: " + this.getSchiffsname() + "\n");
 	}
 	
+	/**
+	 * Gibt das ganze Ladungsverzeichnis des Raumschiffs aus
+	 */
 	public void ladungsverzeichnisAusgeben() {
 		this.ladungsverzeichnisAufraeumen();
 		System.out.println("Ladungsverzeichnis von " + this.getSchiffsname() + ": \n");
@@ -235,6 +296,9 @@ public class Raumschiff {
 		}
 	}
 	
+	/**
+	 * Löscht alle Ladungseintraege die Null als Menge haben
+	 */
 	public void ladungsverzeichnisAufraeumen() {
 		ArrayList<Ladung> verzeichnis = this.getLadungsverzeichnis();
 		for(int i = 0; i < verzeichnis.size(); i++) {
