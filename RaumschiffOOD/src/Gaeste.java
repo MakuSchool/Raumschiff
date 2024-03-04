@@ -2,7 +2,7 @@
 public class Gaeste extends Ladung{
 	private String sprache;
 	private String heimatplanet;
-	private Verpflegungsart verpflegungsart;
+	private Verpflegungsart verpflegung;
 	
 	/**
 	 * Vollparametisierter-Konstruktor für Gäste
@@ -11,13 +11,13 @@ public class Gaeste extends Ladung{
 	 * @param menge = Menge der Ladung
 	 * @param sprache = Sprache der Gäste
 	 * @param heimatplanet = Heimatplanet der Gäste
-	 * @param verpflegungsart = Verpflegungsart der Gäste
+	 * @param verpflegung = Verpflegungsart der Gäste
 	 */
-	public Gaeste(String bezeichnung, int menge, String sprache, String heimatplanet, Verpflegungsart verpflegungsart) {
+	public Gaeste(String bezeichnung, int menge, String sprache, String heimatplanet, Verpflegungsart verpflegung) {
 		super(bezeichnung, menge);
 		this.sprache = sprache;
 		this.heimatplanet = heimatplanet;
-		this.verpflegungsart = verpflegungsart;
+		this.verpflegung = verpflegung;
 	}
 	
 	public Gaeste() {}
@@ -38,12 +38,12 @@ public class Gaeste extends Ladung{
 		this.heimatplanet = heimatplanet;
 	}
 
-	public Verpflegungsart getVerpflegungsart() {
-		return verpflegungsart;
+	public Verpflegungsart getVerpflegung() {
+		return verpflegung;
 	}
 
-	public void setVerpflegungsart(Verpflegungsart verpflegungsart) {
-		this.verpflegungsart = verpflegungsart;
+	public void setVerpflegung(Verpflegungsart verpflegung) {
+		this.verpflegung = verpflegung;
 	}
 	
 	

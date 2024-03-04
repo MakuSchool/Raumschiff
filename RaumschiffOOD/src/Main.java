@@ -6,14 +6,16 @@ public class Main {
 		Raumschiff romulaner = new Raumschiff(2, 100, 100, 100, 100, 2, "IRW Khazara");
 		Raumschiff vulkanier = new Raumschiff(0, 80, 80, 50, 100, 5, "Ni'Var");
 		
-		klingonen.addLadung(new Ladung("Ferengi Schneckensaft", 200));
-		klingonen.addLadung(new Ladung("Bat'leth Klingonen Schwert", 200));
-		romulaner.addLadung(new Ladung("Borg-Schrott", 5));
-		romulaner.addLadung(new Ladung("Rote Materie", 2));
-		romulaner.addLadung(new Ladung("Plasma-Waffe", 50));
-		vulkanier.addLadung(new Ladung("Forschungssonde", 35));
-		vulkanier.addLadung(new Ladung("Photonentorpedos", 3));
-		
+		klingonen.addLadung(new Gaeste("Borg", 200, "Delta-Quadrant", "irrelevant, alphanumirischer Code", Verpflegungsart.ALL_INCLUSIVE));
+		vulkanier.addLadung(new Gaeste("Ferengi", 10, "Ferenginar", "Ferengi", Verpflegungsart.VOLLPENSION));
+		klingonen.addLadung(new Transportgueter("Ferengi Schneckensaft", 200, 0.2f, 0.2f, 0.1f));
+		klingonen.addLadung(new Transportgueter("Bat'leth Klingonen Schwert", 200, 0.8f, 0.2f, 0.1f));
+		romulaner.addLadung(new Transportgueter("Borg-Schrott", 5, 0.2f, 0.5f, 0.5f));
+		romulaner.addLadung(new Transportgueter("Rote Materie", 2, 1.0f, 1.0f, 1.0f));
+		romulaner.addLadung(new Transportgueter("Plasma-Waffe", 50, 1.0f, 1.0f, 1.0f));
+		vulkanier.addLadung(new Transportgueter("Forschungssonde", 35, 100.0f, 50.0f, 25.0f));
+		vulkanier.addLadung(new Transportgueter("Photonentorpedo", 3, 2.0f, 2.0f, 1.0f));
+				
 		klingonen.photonentorpedoSchiessen(romulaner);
 		romulaner.phaserkanoneSchiessen(klingonen);
 		vulkanier.nachrichtAnAlle("Gewalt ist nicht logisch");

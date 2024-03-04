@@ -1,44 +1,44 @@
 
 public class Transportgueter extends Ladung{
-	private float laenge;
-	private float breite;
-	private float hoehe;
+	private float laengeMeter;
+	private float breiteMeter;
+	private float hoeheMeter;
 	
 	/**
 	 * Vollparametisierter-Konstruktor der Transportgüter
 	 * 
 	 * @param bezeichnung = Bezeichnung der Transportgüter
 	 * @param menge = Menge der Transportgüter
-	 * @param laenge = Länge der Güter 
-	 * @param breite = Breite der Güter
-	 * @param hoehe = Höhe der Güter
+	 * @param laengeMeter = Länge der Güter 
+	 * @param breiteMeter = Breite der Güter
+	 * @param hoeheMeter = Höhe der Güter
 	 */
-	public Transportgueter(String bezeichnung, int menge, float laenge, float breite, float hoehe) {
+	public Transportgueter(String bezeichnung, int menge, float laengeMeter, float breiteMeter, float hoeheMeter) {
 		super(bezeichnung, menge);
-		this.laenge = laenge;
-		this.breite = breite;
-		this.hoehe = hoehe;
+		this.laengeMeter = laengeMeter;
+		this.breiteMeter = breiteMeter;
+		this.hoeheMeter = hoeheMeter;
 	}
 	
 	public Transportgueter() {} 
 	
-	public float getLaenge() {
-		return laenge;
+	public float getLaengeMeter() {
+		return laengeMeter;
 	}
-	public void setLaenge(float laenge) {
-		this.laenge = laenge;
+	public void setLaengeMeter(float laengeMeter) {
+		this.laengeMeter = laengeMeter;
 	}
-	public float getBreite() {
-		return breite;
+	public float getBreiteMeter() {
+		return breiteMeter;
 	}
-	public void setBreite(float breite) {
-		this.breite = breite;
+	public void setBreiteMeter(float breiteMeter) {
+		this.breiteMeter = breiteMeter;
 	}
-	public float getHoehe() {
-		return hoehe;
+	public float getHoeheMeter() {
+		return hoeheMeter;
 	}
-	public void setHoehe(float hoehe) {
-		this.hoehe = hoehe;
+	public void setHoeheMeter(float hoeheMeter) {
+		this.hoeheMeter = hoeheMeter;
 	}
 	
 	
