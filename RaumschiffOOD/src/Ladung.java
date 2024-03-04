@@ -5,7 +5,7 @@
  * 
  */
 
-public class Ladung {
+public abstract class Ladung {
 	private String bezeichnung;
 	private int menge;
 	
@@ -13,7 +13,6 @@ public class Ladung {
 	 * Parameterloser Konstruktor für Ladung  
 	 */
 	public Ladung() {
-		super();
 	}
 	
 	/**
@@ -25,11 +24,10 @@ public class Ladung {
 	 * Menge der Ladung als Integer
 	 */
 	public Ladung(String bezeichnung, int menge) {
-		super();
 		this.bezeichnung = bezeichnung;
 		this.menge = menge;
 	}
-	
+
 	/**
 	 * Getter Methode für den Namen der Ladung
 	 * @return Name der Ladung als String

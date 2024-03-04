@@ -1,0 +1,8 @@
+
+public enum Verpflegungsart {
+	VOLLPENSION,
+	HALBPENSION,
+	FRUEHSTUEK,
+	ALL_INCLUSIVE,
+	KEINE
+}
