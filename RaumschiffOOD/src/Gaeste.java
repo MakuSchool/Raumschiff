@@ -46,7 +46,9 @@ public class Gaeste extends Ladung{
 		this.verpflegung = verpflegung;
 	}
 	
-	
+	public String toString() {
+		return "Gast: " + this.getBezeichnung() + ": " + this.getMenge() + " Sprache: " + this.sprache + " Heimatplanet: " + this.heimatplanet + " Verpflegung: " + this.verpflegung;
+	}
 	
 	
 	
