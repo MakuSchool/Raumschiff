@@ -22,6 +22,7 @@ public class Raumschiff {
 	private String schiffsname;
 	private static ArrayList<String> broadcastKommunikator = new ArrayList<String>();
 	private ArrayList<Ladung> ladungsverzeichnis = new ArrayList<Ladung>();
+	private Verwaltung verwaltung;
 	
 	
 	/**
@@ -36,7 +37,7 @@ public class Raumschiff {
 	 * @param schiffsname	Name des Schiffs
 	 */
 	public Raumschiff(int photonentorpedoAnzahl, int energieversorgungInProzent, int schildInProzent,
-			int huelleInProzent, int lebenserhaltungssystemeInProzent, int androidenAnzahl, String schiffsname) {
+			int huelleInProzent, int lebenserhaltungssystemeInProzent, int androidenAnzahl, String schiffsname, Verwaltung verwaltung) {
 		super();
 		this.photonentorpedoAnzahl = photonentorpedoAnzahl;
 		this.energieversorgungInProzent = energieversorgungInProzent;
@@ -45,6 +46,7 @@ public class Raumschiff {
 		this.lebenserhaltungssystemeInProzent = lebenserhaltungssystemeInProzent;
 		this.androidenAnzahl = androidenAnzahl;
 		this.schiffsname = schiffsname;
+		this.verwaltung = verwaltung;
 	}
 	
 	public Raumschiff() {
@@ -306,6 +308,10 @@ public class Raumschiff {
 				this.getLadungsverzeichnis().remove(i);
 			}
 		}
+	}
+	
+	public void ladungsverzeichnisToFile() {
+		this.verwaltung.writeToFile("C:\\Users\\Max\\Desktop\\Dokumente\\Ladung.txt", this.ladungsverzeichnis);
 	}
 	
 	

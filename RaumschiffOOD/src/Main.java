@@ -2,9 +2,9 @@
 public class Main {
 
 	public static void main(String[] args) {
-		Raumschiff klingonen = new Raumschiff(1, 100, 100, 100, 100, 2, "IKS Hegh'ta");
-		Raumschiff romulaner = new Raumschiff(2, 100, 100, 100, 100, 2, "IRW Khazara");
-		Raumschiff vulkanier = new Raumschiff(0, 80, 80, 50, 100, 5, "Ni'Var");
+		Raumschiff klingonen = new Raumschiff(1, 100, 100, 100, 100, 2, "IKS Hegh'ta", new TextSchreiber());
+		Raumschiff romulaner = new Raumschiff(2, 100, 100, 100, 100, 2, "IRW Khazara", new TextSchreiber());
+		Raumschiff vulkanier = new Raumschiff(0, 80, 80, 50, 100, 5, "Ni'Var", new TextSchreiber());
 		
 		klingonen.addLadung(new Gaeste("Borg", 200, "Delta-Quadrant", "irrelevant, alphanumirischer Code", Verpflegungsart.ALL_INCLUSIVE));
 		vulkanier.addLadung(new Gaeste("Ferengi", 10, "Ferenginar", "Ferengi", Verpflegungsart.VOLLPENSION));
@@ -32,6 +32,7 @@ public class Main {
 		romulaner.zustandRaumschiff();
 		romulaner.ladungsverzeichnisAusgeben();
 		Raumschiff.eintraegeLogbuchZurueckgeben();
+		vulkanier.ladungsverzeichnisToFile();
 		
 		
 		
